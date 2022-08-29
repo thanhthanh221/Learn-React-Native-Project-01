@@ -161,8 +161,8 @@ export const restaurantDataFake = [
     photo: require('../images/noodle-shop.jpg'),
     duration: '15 - 20 min',
     location: {
-      latitude: 1.558050496260768,
-      longitude: 110.34743759630511,
+      latitude: 21.0052531,
+      longitude: 105.8441894,
     },
     courier: {
       avatar: require('../images/avatar-5.jpg'),

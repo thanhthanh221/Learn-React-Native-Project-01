@@ -5,6 +5,7 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {NavigationContainer} from '@react-navigation/native';
 import BottomTabs from './src/navigation/BottomTabs';
 import Restaurant from './src/screens/Restaurant';
+import OrderDelivery from './src/screens/OrderDelivery';
 
 const Stack = createNativeStackNavigator();
 
@@ -15,7 +16,8 @@ const App = () => {
         screenOptions={{headerShown: false}}
         initialRouteName="Home">
         <Stack.Screen name="Home" component={BottomTabs} />
-        <Stack.Screen name='Restaurant' component={Restaurant} />
+        <Stack.Screen name="Restaurant" component={Restaurant} />
+        <Stack.Screen name="OrderMap" component={OrderDelivery} />
       </Stack.Navigator>
     </NavigationContainer>
   );

@@ -22,7 +22,10 @@ const RestaurantScreenRenderOrder = props => {
   };
   return (
     <View>
-      <RestaurantScreenDots />
+      <RestaurantScreenDots
+        restaurant={props.restaurant}
+        scrollX={props.scrollX}
+      />
       <View
         style={{height: 220, backgroundColor: '#fff', paddingHorizontal: 20}}>
         <View
@@ -69,7 +72,13 @@ const RestaurantScreenRenderOrder = props => {
             alignItems: 'center',
             height: '62%',
           }}>
-          <TouchableOpacity style={styles.button}>
+          <TouchableOpacity
+            style={styles.button}
+            onPress={() =>
+              props.navigation.navigate('OrderMap', {
+                restaurant: props.restaurant,
+              })
+            }>
             <Text style={{fontSize: 25, color: '#000'}}>Đặt hàng</Text>
           </TouchableOpacity>
         </View>

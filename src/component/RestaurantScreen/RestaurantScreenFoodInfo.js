@@ -10,16 +10,17 @@ import React from 'react';
 import RestaurantScreenFoodList from './RestaurantScreenFoodList';
 
 const RestaurantScreenFoodInfo = props => {
-  const scrollX = new Animated.Value(0);
-  const [countFood, setCountFood] = React.useState(0);
   return (
     <Animated.ScrollView
       horizontal
       pagingEnabled
       showsHorizontalScrollIndicator={false}
-      onScroll={Animated.event([{nativeEvent: {contentOffset: {x: scrollX}}}], {
-        useNativeDriver: false,
-      })}>
+      onScroll={Animated.event(
+        [{nativeEvent: {contentOffset: {x: props.scrollX}}}],
+        {
+          useNativeDriver: false,
+        },
+      )}>
       {props.restaurant?.menu.map((food, index) => (
         <RestaurantScreenFoodList
           setFoodUserSelect={input => props.setFoodUserSelect(input)}
